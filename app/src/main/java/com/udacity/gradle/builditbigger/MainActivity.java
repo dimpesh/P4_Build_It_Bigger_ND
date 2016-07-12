@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.support.v4.util.Pair;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,7 +52,8 @@ public class MainActivity extends AppCompatActivity{
     {
 
         joker=new Joker();
-        Toast.makeText(this, joker.getJoke(), Toast.LENGTH_LONG).show();
+        new JokesFetchAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+//        Toast.makeText(this, joker.getJoke(), Toast.LENGTH_LONG).show();
 
 
     }
@@ -60,11 +63,12 @@ public class MainActivity extends AppCompatActivity{
      */
 
     public void launchLibraryActivity(View view){
-//    Toast.makeText(getApplicationContext(),"Hello from launchLibraryActivity",Toast.LENGTH_SHORT).show();
-        joker=new Joker();
-        Intent myIntent = new Intent(getApplicationContext(), LibraryActivity.class);
-        myIntent.putExtra("key",joker.getJoke());
-        startActivity(myIntent);
+//        joker=new Joker();
+//        Intent myIntent = new Intent(getApplicationContext(), LibraryActivity.class);
+//        myIntent.putExtra("key",joker.getJoke());
+//        startActivity(myIntent);
+        new JokesFetchAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+
     }
 
 }
