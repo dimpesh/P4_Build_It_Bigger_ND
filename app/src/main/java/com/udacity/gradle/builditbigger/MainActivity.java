@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Joker;
+
+import java.util.Random;
+
 import dimpesh.app.mylibrary.LibraryActivity;
 
 
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity{
     {
 
         joker=new Joker();
-        new JokesFetchAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+//        new JokesFetchAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 //        Toast.makeText(this, joker.getJoke(), Toast.LENGTH_LONG).show();
 
 
@@ -68,7 +71,9 @@ public class MainActivity extends AppCompatActivity{
 //        myIntent.putExtra("key",joker.getJoke());
 //        startActivity(myIntent);
         new JokesFetchAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
+//
 
+//        new JokesFetchAsyncTask().execute(getApplicationContext(),new Joker().getJoke());
     }
 
 }
