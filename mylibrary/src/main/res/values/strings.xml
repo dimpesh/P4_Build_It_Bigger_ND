@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Library</string>
     <string name="library_welcome_text">Welcome To Android Library</string>
+    <string name="title">Jokes</string>
 </resources>

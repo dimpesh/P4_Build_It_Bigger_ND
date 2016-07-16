@@ -12,10 +12,11 @@ public class LibraryActivity extends AppCompatActivity {
     TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 //        super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-
+        this.setTitle(R.string.title);
         tv= (TextView) findViewById(R.id.tv_joke);
 
         String str=getIntent().getExtras().getString("key");

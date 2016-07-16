@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.v4.util.Pair;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,16 +17,21 @@ import com.example.Joker;
 
 import java.util.Random;
 
+import javax.crypto.interfaces.PBEKey;
+
 import dimpesh.app.mylibrary.LibraryActivity;
 
 
 public class MainActivity extends AppCompatActivity{
 
     Joker joker;
+    public static ProgressBar pg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        pg=(ProgressBar)findViewById(R.id.pg);
     }
 
 

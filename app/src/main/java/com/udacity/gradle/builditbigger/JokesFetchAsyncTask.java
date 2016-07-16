@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.Joker;
@@ -29,8 +30,16 @@ public class JokesFetchAsyncTask extends AsyncTask<Pair<Context, String>, Void, 
     private static MyApi myApiService = null;
     private Context context;
 
-//    @Override
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        MainActivity.pg.setVisibility(View.VISIBLE);
+    }
+
+    //    @Override
     protected String doInBackground(Pair<Context, String>... params) {
+
+
 //        protected String doInBackground(Context...mContext){
         Log.v("My String : ","doInBack Called");
         if(myApiService == null) {  // Only do this once
@@ -68,6 +77,8 @@ public class JokesFetchAsyncTask extends AsyncTask<Pair<Context, String>, Void, 
     @Override
     protected void onPostExecute(String result) {
         Log.v("My String : ","onPost Called");
+        MainActivity.pg.setVisibility(View.INVISIBLE);
+
         if(result!=null) {
 //            Toast.makeText(context, result, Toast.LENGTH_LONG).show();
             Intent intent=new Intent(context,LibraryActivity.class);

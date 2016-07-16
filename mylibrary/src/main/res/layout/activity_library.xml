@@ -5,19 +5,14 @@
 
     <TextView
         android:id="@+id/tv_joke"
-        android:layout_width="wrap_content"
-        android:textSize="45dp"
+        android:layout_width="match_parent"
+        android:textSize="28dp"
         android:gravity="center"
-        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="match_parent"
         android:text="@string/library_welcome_text"
         />
 
-    <ImageView
-        android:layout_marginTop="200dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/gradle_logo"
-        />
 </LinearLayout>
 
 
