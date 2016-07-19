@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>BUILD IT BIGGER by dimpesh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">BUILD IT BIGGER</h1>
+      <h2 class="project-tagline">Project 4 : BUILD IT BIGGER(a part of android developer nanodegree UDACITY)</h2>
+      <a href="https://github.com/dimpesh/P4_Build_It_Bigger_ND" class="btn">View on GitHub</a>
+      <a href="https://github.com/dimpesh/P4_Build_It_Bigger_ND/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/dimpesh/P4_Build_It_Bigger_ND/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="gradle-for-android-and-java-final-project" class="anchor" href="#gradle-for-android-and-java-final-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle for Android and Java Final Project</h1>
+
+<p>In this project, you will create an app with multiple flavors that uses
+multiple libraries and Google Could Endpoints. The finished app will consist
+of four modules. A Java library that provides jokes, a Google Could Endpoints
+(GCE) project that serves those jokes, an Android Library containing an
+activity for displaying jokes, and an Android app that fetches jokes from the
+GCE module and passes them to the Android Library for display.</p>
+
+<h2>
+<a id="why-this-project" class="anchor" href="#why-this-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Why this Project</h2>
+
+<p>As Android projects grow in complexity, it becomes necessary to customize the
+behavior of the Gradle build tool, allowing automation of repetitive tasks.
+Particularly, factoring functionality into libraries and creating product
+flavors allow for much bigger projects with minimal added complexity.</p>
+
+<h2>
+<a id="what-will-i-learn" class="anchor" href="#what-will-i-learn" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What Will I Learn?</h2>
+
+<p>You will learn the role of Gradle in building Android Apps and how to use Gradle to manage apps of increasing complexity. You'll learn to:</p>
+
+<ul>
+<li>Add free and paid flavors to an app, and set up your build to share code between them</li>
+<li>Factor reusable functionality into a Java library</li>
+<li>Factor reusable Android functionality into an Android library</li>
+<li>Configure a multi project build to compile your libraries and app</li>
+<li>Use the Gradle App Engine plugin to deploy a backend</li>
+<li>Configure an integration test suite that runs against the local App Engine development server</li>
+</ul>
+
+<h2>
+<a id="how-do-i-complete-this-project" class="anchor" href="#how-do-i-complete-this-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How Do I Complete this Project?</h2>
+
+<h3>
+<a id="step-0-starting-point" class="anchor" href="#step-0-starting-point" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 0: Starting Point</h3>
+
+<p>This is the starting point for the final project, which is provided to you in the <a href="https://github.com/udacity/ud867/tree/master/FinalProject">course repository</a>.
+It contains an activity with a banner ad and a button that purports to tell a
+joke, but actually just complains. The banner ad was set up following the
+instructions here:</p>
+
+<p><a href="https://developers.google.com/mobile-ads-sdk/docs/admob/android/quick-start">https://developers.google.com/mobile-ads-sdk/docs/admob/android/quick-start</a></p>
+
+<p>You may need to download the Google Repository from the Extras section of the
+Android SDK Manager.</p>
+
+<p>When you can build an deploy this starter code to an emulator, you're ready to
+move on.</p>
+
+<h3>
+<a id="step-1-create-a-java-library" class="anchor" href="#step-1-create-a-java-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 1: Create a Java library</h3>
+
+<p>Your first task is to create a Java library that provides jokes. Create a new
+Gradle Java project either using the Android Studio wizard, or by hand. Then
+introduce a project dependency between your app and the new Java Library. If
+you need review, check out demo 4.01 from the course code.</p>
+
+<p>Make the button display a toast showing a joke retrieved from your Java joke
+telling library.</p>
+
+<h3>
+<a id="step-2-create-an-android-library" class="anchor" href="#step-2-create-an-android-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 2: Create an Android Library</h3>
+
+<p>Create an Android Library containing an Activity that will display a joke
+passed to it as an intent extra. Wire up project dependencies so that the
+button can now pass the joke from the Java Library to the Android Library.</p>
+
+<p>For review on how to create an Android library, check out demo 4.03. For a
+refresher on intent extras, check out;</p>
+
+<p><a href="http://developer.android.com/guide/components/intents-filters.html">http://developer.android.com/guide/components/intents-filters.html</a></p>
+
+<h3>
+<a id="step-3-create-gce-module" class="anchor" href="#step-3-create-gce-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 3: Create GCE Module</h3>
+
+<p>This next task will be pretty tricky. Instead of pulling jokes directly from
+our Java library, we'll set up a Google Cloud Endpoints development server,
+and pull our jokes from there. Follow the instructions in the following
+tutorial to add a Google Could Endpoints module to your project:</p>
+
+<p><a href="https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints">https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints</a></p>
+
+<p>Introduce a project dependency between your Java library and your GCE module,
+and modify the GCE starter code to pull jokes from your Java library. Create
+an Async task to retrieve jokes. Make the button kick off a task to retrieve a
+joke, then launch the activity from your Android Library to display it.</p>
+
+<h3>
+<a id="step-4-add-functional-tests" class="anchor" href="#step-4-add-functional-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 4: Add Functional Tests</h3>
+
+<p>Add code to test that your Async task successfully retrieves a non-empty
+string. For a refresher on setting up Android tests, check out demo 4.09.</p>
+
+<h3>
+<a id="step-5-add-a-paid-flavor" class="anchor" href="#step-5-add-a-paid-flavor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Step 5: Add a Paid Flavor</h3>
+
+<p>Add free and paid product flavors to your app. Remove the ad (and any
+dependencies you can) from the paid flavor.</p>
+
+<h2>
+<a id="optional-tasks" class="anchor" href="#optional-tasks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional Tasks</h2>
+
+<p>For extra practice to make your project stand out, complete the following tasks.</p>
+
+<h3>
+<a id="add-interstitial-ad" class="anchor" href="#add-interstitial-ad" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add Interstitial Ad</h3>
+
+<p>Follow these instructions to add an interstitial ad to the free version.
+Display the add after the user hits the button, but before the joke is shown.</p>
+
+<p><a href="https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial">https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial</a></p>
+
+<h3>
+<a id="add-loading-indicator" class="anchor" href="#add-loading-indicator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add Loading Indicator</h3>
+
+<p>Add a loading indicator that is shown while the joke is being retrieved and
+disappears when the joke is ready. The following tutorial is a good place to
+start:</p>
+
+<p><a href="http://www.tutorialspoint.com/android/android_loading_spinner.htm">http://www.tutorialspoint.com/android/android_loading_spinner.htm</a></p>
+
+<h3>
+<a id="configure-test-task" class="anchor" href="#configure-test-task" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configure Test Task</h3>
+
+<p>To tie it all together, create a Gradle task that:</p>
+
+<ol>
+<li>Launches the GCE local development server</li>
+<li>Runs all tests</li>
+<li>Shuts the server down again</li>
+</ol>
+
+<h1>
+<a id="rubric" class="anchor" href="#rubric" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rubric</h1>
+
+<h3>
+<a id="required-components" class="anchor" href="#required-components" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Required Components</h3>
+
+<ul>
+<li>Project contains a Java library for supplying jokes</li>
+<li>Project contains an Android library with an activity that displays jokes passed to it as intent extras.</li>
+<li>Project contains a Google Cloud Endpoints module that supplies jokes from the Java library. Project loads jokes from GCE module via an async task.</li>
+<li>Project contains connected tests to verify that the async task is indeed loading jokes.</li>
+<li>Project contains paid/free flavors. The paid flavor has no ads, and no unnecessary dependencies.</li>
+</ul>
+
+<h3>
+<a id="required-behavior" class="anchor" href="#required-behavior" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Required Behavior</h3>
+
+<ul>
+<li>App retrieves jokes from Google Cloud Endpoints module and displays them via an Activity from the Android Library.</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/dimpesh/P4_Build_It_Bigger_ND">BUILD IT BIGGER</a> is maintained by <a href="https://github.com/dimpesh">dimpesh</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
